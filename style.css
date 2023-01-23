@@ -1,5 +1,5 @@
 body {
-  background: url("https://static.pexels.com/photos/6663/desk-white-black-header.jpg") no-repeat center center fixed;
+  background: url("wallpapper.png") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -16,6 +16,8 @@ body {
 {
   text-transform: uppercase;
   font-weight: 700;
+  color: aliceblue;
+  pointer-events: none;
 
 }
 
@@ -23,6 +25,8 @@ body {
 {
   text-transform: uppercase;
   font-weight: 700;
+  color: aliceblue;
+  pointer-events: none;
 
 }
 .session
@@ -53,7 +57,7 @@ p {
   justify-content: center;
   height: 34px;
   align-items: center;
-  color: #333333;
+  color: #ffc;
   font-size: 20px;
   font-family: "calibri";
   font-weight: 700;
@@ -90,6 +94,7 @@ p {
 .flip-clock-label
 {
   font-weight: 700;
+  color: azure;
 }
 .container {
   width: 500px;
