@@ -1,16 +1,37 @@
-body {
-  background: url("wallpapper.png") no-repeat center center fixed;
-  background-size: cover;
+:root
+{
+  --background : "";
 }
+body {
+  background: url('clck_back.jpg');
+  
+  
+  background-size: cover;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+body::before
 
+{
+  background: linear-gradient(45deg, rgb(0, 60, 255), #00ff73 50%, #00ff80 50%, #00ae09);
+  content: '';
+ 
+}
+body::after
+{
+  content: '';
+  background: linear-gradient(160deg, #ff9100, #ff4400 50%, transparent 50%, transparent);
+}
 .pomodoro {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   width: 500px;
   padding-top: 15px;
   padding-bottom: 25px;
+  display: none;
 }
 .session_length_heading
 {
@@ -69,7 +90,7 @@ p {
   display: flex;
   justify-content: center;
 }
-#start, #stop, #clear
+#start, #stop, #clear, #stop_over
 {
   text-transform: uppercase;
   color: #ffc;
@@ -79,7 +100,7 @@ p {
   outline: none;
 }
 
-#start:hover, #stop:hover, #clear:hover
+#start:hover, #stop:hover, #clear:hover, #stop_over:hover
 {
   text-transform: uppercase;
   color: #333;
@@ -112,6 +133,44 @@ p {
 #stop {
   margin-left: 10px;
   margin-right: 10px;
+  animation: shake 0.2s linear infinite;
+  animation-play-state: paused;
+}
+
+#start
+{
+  animation: shake 0.2s linear infinite;
+  animation-play-state: paused;
+}
+#stop_over
+{
+
+  animation: shake 0.2s linear infinite;
+  animation-play-state: paused;
+  /* display: block; */
+  margin-right: 50px;
+  margin-left: 45px;
+  width: 95px;
+  font-size: 17px;
+  text-align: center;
+  justify-content: center;
+  /* display: none; */
+  padding-left: 12px;
+  padding-top: 12px;
+  position: absolute;
+  overflow: hidden;
+  opacity: 0;
+  z-index: -2;
+}
+.btn:focus
+{
+  background-color: #333;
+  color: #ffc;
+}
+@keyframes shake {
+  0% { -webkit-transform: translate(2px, 0); }
+	50% { -webkit-transform: translate(-2px, 0); }
+	100% { -webkit-transform: translate(2px, 0); }
 }
 
 .btn {
@@ -119,7 +178,7 @@ p {
   color: #CCCCCC;
 }
 
-#sessInc, #sessDec, #breakInc, #breakDec {
+#sessInc, #sessDec{
   font-weight: bold;
   font-size: 21px;
   outline: none;
@@ -127,8 +186,15 @@ p {
   transition: 0.5s;
 
 }
+.col-md-6
 
-#sessInc:hover, #sessDec:hover, #breakInc:hover, #breakDec:hover {
+{
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#sessInc:hover, #sessDec:hover {
   font-weight: bold;
   font-size: 21px;
   outline: none;
@@ -158,3 +224,25 @@ p {
   justify-content: center;
   margin-bottom: 20px;
 }
+
+
+
+@media only screen and (max-width: 767px) {
+
+  body
+  {
+    overflow: hidden;
+  }
+  .pomodoro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(01);
+    width: 500px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    /* display: none; */
+  }
+}
+
+
