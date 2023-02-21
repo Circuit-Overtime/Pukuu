@@ -1,0 +1,341 @@
+
+:root
+{
+  --hour_val : 0;
+  --min_val: 0;
+  --sec_val: 0;
+  --milisec_val: 0;
+  
+  
+ 
+
+}  
+
+ .stopclockMain
+ {
+    display: none;
+    width: 100%;
+    position: absolute ;
+    top: 20%;
+    left: 15%;
+    
+ } 
+
+
+
+ 
+ .card_hr,
+ .card_min,
+ .card_sec,
+ .card_ms
+ {
+   position: relative;
+   width: 250px;
+   height: 300px;
+   background: transparent;
+   left: 0px;
+   /* top: 150px; */
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   flex-wrap: nowrap;
+   transition: 0.5s;
+   overflow: hidden;
+   
+   
+}
+
+.card_hr h1,
+.card_min h1,
+.card_sec h1,
+.card_ms h1
+{
+  font-size: 30px;
+  font-family: Algerian;
+  position: relative;
+  top: 10px;
+  transform: translate(-50%, -50%);
+  left: -100px;
+  color: #ffffff;
+  font-weight: 700;
+  transition: 0.5s;
+}
+
+.card_ms h1
+{
+  left: -75px;
+}
+.card_hr h2,
+.card_min h2,
+.card_sec h2,
+.card_ms h2
+{
+  margin-top: 30px;
+  font-size: 25px;
+  font-family: "calibri";
+  position: absolute;
+  top: 225px;
+
+  letter-spacing: 3px;
+  left: 120px;
+  color: #ffffff;
+  font-weight: 700;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+}
+
+
+
+
+.card_hr .circledit_hour
+{
+  stroke-dashoffset: calc(440 - (440 * var(--hour_val)) / 100);
+
+  stroke: #ffae00;
+}
+
+
+.card_min .circledit_min
+{
+  stroke-dashoffset: calc(440 - (440 * var(--min_val)) / 100);
+  stroke: #ffae00;
+}
+
+.card_sec .circledit_sec
+{
+  stroke-dashoffset: calc(440 - (440 * var(--sec_val)) / 100);
+  stroke: #ffae00;
+}
+
+.card_ms .circledit_mili
+{
+  stroke-dashoffset: calc(440 - (440 * var(--milisec_val)) / 100);
+  stroke: #ffae00;
+}
+
+
+
+
+ .loader
+ {
+   position: absolute;
+   top: 100px;
+   left: 100px;
+   background-color: rgb(255, 196, 0);
+   box-shadow: 0 20px 40px rgb(255, 136, 0);
+   border-radius: 500px;
+ }
+ 
+
+ 
+ svg
+ {
+   position: relative;
+   width: 250px;
+   height: 300px;
+   z-index: 1000;
+ 
+ 
+ }
+ 
+ svg circle
+ {
+   width: 100%;
+   height: 100%;
+   fill: none;
+   stroke: #19191946;
+   stroke-width: 5;
+   stroke-linecap: round;
+   transform: translate(50px, 80px);
+ }
+ .circledit_hour,
+ .circledit_min,
+ .circledit_sec,
+ .circledit_mili
+ {
+     stroke: #ffd900;
+     stroke-dasharray: 440;
+     stroke-dashoffset: 440;
+     height: 85%;
+     transition: 0.25s;
+     overflow: hidden;
+ }
+ 
+
+ 
+ .percent
+ {
+   height: 150px; 
+   width: 150px;
+   position: absolute;
+   top: 75px;
+   left: 45px;
+   border-radius: 50%;
+   box-shadow: inset 0 0 50px #000;
+ }
+
+ 
+
+ 
+
+#start_sc, #stop_sc, #reset_sc
+{
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  transition: 0.5s;
+  border: none;
+  height: 120px;
+  width: 200px;
+  border-radius: 25px;
+  outline: none;
+
+  border: 1px solid #fff;
+  background: #00000086;
+  backdrop-filter: blur(5px);
+  position: relative;
+  top: 300px;
+  left: -120px;
+  margin: 20px 20px;
+}
+
+
+#lap_btn
+{
+  text-transform: uppercase;
+  color: rgb(255, 53, 53);
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  transition: 0.5s;
+  border: none;
+  height: 60px;
+  width: 100px;
+  border-radius: 7px;
+  outline: none;
+
+  border: 1px solid #fff;
+  background: #ffffff;
+  backdrop-filter: blur(5px);
+  position: relative;
+  top: 328px;
+  left: -120px;
+  margin: 20px 20px;
+}
+.stopclockLayout
+{
+    position: absolute;
+    left: 20%;
+}
+#btns_sc {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  #stop_sc {
+    margin-left: 10px;
+    margin-right: 10px;
+    animation: shake 0.2s linear infinite;
+    animation-play-state: paused;
+  }
+  
+  #start_sc
+  {
+    animation: shake 0.2s linear infinite;
+    animation-play-state: paused;
+  }
+ /*#stop_over
+  {
+  
+    animation: shake 0.2s linear infinite;
+    animation-play-state: paused;
+    /* display: block; *//*
+    margin-right: 50px;
+    margin-left: 45px;
+    width: 95px;
+    font-size: 17px;
+    text-align: center;
+    justify-content: center;
+    /* display: none; *//*
+    padding-left: 12px;
+    padding-top: 12px;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    z-index: -2;
+  }*/
+
+
+  .btn_sc:focus
+  {
+    background-color: #333;
+    color: #ffc;
+  }
+  
+  @keyframes shake {
+    0% { -webkit-transform: translate(2px, 0); }
+      50% { -webkit-transform: translate(-2px, 0); }
+      100% { -webkit-transform: translate(2px, 0); }
+  }
+  
+  .btn_sc {
+    background-color: #333333;
+    color: #CCCCCC;
+  }
+.lapZone
+{
+  position: absolute;
+  width: 250px;
+  left: -15%; /*-15*/
+  top: 15%;
+  transition: .5s;
+  height: 500px;
+  background: #ffffff73;
+  opacity: 100%;
+  z-index: 1000;
+  max-height: 500px;
+  overflow-x: hidden;
+  border-radius: 24px;
+  backdrop-filter: blur(15px);
+  cursor: pointer;
+
+}
+
+.lapZone.active
+{
+  position: absolute;
+  width: 300px;
+  left: 1%;
+  top: 15%;
+  transition: .5s;
+  height: 500px;
+  background: transparent;
+  opacity: 100%;
+  z-index: 1000;
+  max-height: 500px;
+  overflow-x: hidden;
+  border-radius: 24px;
+  backdrop-filter: blur(15px);
+  cursor: pointer;
+
+}
+
+
+
+.lapZone::-webkit-scrollbar
+{
+  background: transparent;
+}
+.lapTimings
+{
+  position: relative;
+  color: #fff;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
