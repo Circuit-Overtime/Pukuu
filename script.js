@@ -142,7 +142,7 @@ $(document).ready(function(){
     else
     {
       if (count != countS || clock.getTime()==0){
-        clock.setTime(countS*5); // calculates the clock
+        clock.setTime(countS*60); // calculates the clock
         pos="Best Of Luck";
         $("#stats").html(pos);
       } else {
