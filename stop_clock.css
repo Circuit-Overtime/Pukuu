@@ -312,7 +312,7 @@
   top: 15%;
   transition: .5s;
   height: 500px;
-  background: transparent;
+  background: #ffffff15;
   opacity: 100%;
   z-index: 1000;
   max-height: 500px;
