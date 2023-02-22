@@ -208,7 +208,7 @@ $(document).ready(function(){
   //double pausing problem
   $("#stop").on("click", function(){
     clock.stop();
-    document.getElementsByTagName("body")[0].exitFullscreen();
+    
     countLama = clock.getTime();
     if(countLama == 0)
     {
