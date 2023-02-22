@@ -110,6 +110,7 @@
     left: 4%;
     width: 100px;
     max-width: auto;
+    pointer-events: none;
 }
 
 .timerNavctrls ion-icon
