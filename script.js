@@ -18,7 +18,7 @@ $(document).ready(function(){
       interval: function(){
         if (clock.getTime() == 0){
 
-    
+          
           if(defaultClkType != "timer")
           {
             document.getElementById("logo").style.top = "-12.5%";
@@ -129,7 +129,7 @@ $(document).ready(function(){
 
 
   $("#start").on("click", function(){
-
+    document.getElementsByTagName("body")[0].requestFullscreen();
     if(clock.getTime()!=0)
     {
       
@@ -208,6 +208,7 @@ $(document).ready(function(){
   //double pausing problem
   $("#stop").on("click", function(){
     clock.stop();
+    document.getElementsByTagName("body")[0].exitFullscreen();
     countLama = clock.getTime();
     if(countLama == 0)
     {
@@ -234,6 +235,7 @@ $("#stop_over").on("click", function(){
   pos = "Best Of Luck";
   $("#stats").html(pos);
   hideResumeBtn();
+  
 
 });
 
@@ -241,6 +243,7 @@ $("#stop_over").on("click", function(){
 
   $("#clear").on("click", function(){
     clock.stop();
+    document.exitFullscreen();
     pos = "Hey!";
     $("#stats").html(pos);
     clock.setTime(0);
@@ -347,4 +350,31 @@ else
 
 }, 500);
 
+// =========================================================================================================================================== 
+window.onblur = function () {
+  og_title  = document.title;
+  alt_title = ["Hey! - Lost Focus??" , "Miss you :(", "Heyyy!! Come Back", "Breakup :(", "404 - Error"];
+  alt_title = alt_title[Math.floor(Math.random() * alt_title.length)];
+  document.title = alt_title;
 
+  var link = document.querySelector("link[rel~='icon']");
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.head.appendChild(link);
+  }
+  link.href = 'crying_clock.png';
+}
+
+window.onfocus = function () {
+  og_title  = document.title;
+  document.title = "C-Lock You Up --";
+  var link = document.querySelector("link[rel~='icon']");
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.head.appendChild(link);
+  }
+  link.href = 'clock_ico.png';
+
+}
