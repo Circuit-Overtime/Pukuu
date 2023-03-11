@@ -188,4 +188,28 @@ document.getElementById("navBarSt").addEventListener("click", () => {
 
 document.getElementById("lapZone").addEventListener("click", () => {
     document.getElementById("lapZone").classList.toggle("active");
+    document.addEventListener("mousedown", (e) => {
+        //[enable this on next patch]
+        
+        // if(e.target != '<div class="lapZone" id="lapZone"></div>')
+        // {
+        //     if(document.getElementById("lapZone").classList.contains("active"))
+        //     {
+        //         document.getElementById("lapZone").classList.toggle("active");
+        //     }
+        // }
+    })
+})
+
+document.addEventListener("keydown", (e) => {
+    
+ if(e.key  === "Escape")
+ {
+    if(document.getElementById("lapZone").classList.contains("active"))
+    {
+        document.getElementById("lapZone").classList.toggle("active");
+    }
+ }
+
+
 })
